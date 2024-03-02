@@ -8,6 +8,11 @@ Harsh Tamakuwala - 100824220
 3. Deploy Maven WebApp over Google Kubernetes Engine (GKE).
 
 ## YAML Files
+Creating the Deployment YAML File 
+```cmd
+kubectl create -f mysql-deploy.yaml
+```
+
 binarycalculator-deploy.yaml:
   ```yaml
   apiVersion: apps/v1
@@ -31,6 +36,10 @@ binarycalculator-deploy.yaml:
               - containerPort: 8080
                 name: binarycalc
   ```
+Giving the Deployment an IP address using a Service YAML File 
+```cmd
+kubectl create -f mysql-service.yaml
+```
 binarycalculator-service.yaml:
   ```yaml
   apiVersion: v1
